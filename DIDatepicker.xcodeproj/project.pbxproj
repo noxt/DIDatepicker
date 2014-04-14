@@ -21,6 +21,7 @@
 		197269D218FC5AA50082AEA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B418FC5AA50082AEA9 /* UIKit.framework */; };
 		197269DA18FC5AA50082AEA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 197269D818FC5AA50082AEA9 /* InfoPlist.strings */; };
 		197269DC18FC5AA50082AEA9 /* DIDatepickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269DB18FC5AA50082AEA9 /* DIDatepickerTests.m */; };
+		197269E818FC5B780082AEA9 /* DIDatepicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269E718FC5B780082AEA9 /* DIDatepicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		197269D718FC5AA50082AEA9 /* DIDatepickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DIDatepickerTests-Info.plist"; sourceTree = "<group>"; };
 		197269D918FC5AA50082AEA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		197269DB18FC5AA50082AEA9 /* DIDatepickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIDatepickerTests.m; sourceTree = "<group>"; };
+		197269E618FC5B780082AEA9 /* DIDatepicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIDatepicker.h; sourceTree = "<group>"; };
+		197269E718FC5B780082AEA9 /* DIDatepicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIDatepicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		197269B618FC5AA50082AEA9 /* DIDatepicker */ = {
 			isa = PBXGroup;
 			children = (
+				197269E518FC5B120082AEA9 /* Sources */,
 				197269BF18FC5AA50082AEA9 /* DIAppDelegate.h */,
 				197269C018FC5AA50082AEA9 /* DIAppDelegate.m */,
 				197269C218FC5AA50082AEA9 /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				197269D818FC5AA50082AEA9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		197269E518FC5B120082AEA9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				197269E618FC5B780082AEA9 /* DIDatepicker.h */,
+				197269E718FC5B780082AEA9 /* DIDatepicker.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 			files = (
 				197269BD18FC5AA50082AEA9 /* main.m in Sources */,
 				197269C718FC5AA50082AEA9 /* DIViewController.m in Sources */,
+				197269E818FC5B780082AEA9 /* DIDatepicker.m in Sources */,
 				197269C118FC5AA50082AEA9 /* DIAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +471,7 @@
 				197269E118FC5AA50082AEA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		197269E218FC5AA50082AEA9 /* Build configuration list for PBXNativeTarget "DIDatepickerTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				197269E418FC5AA50082AEA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

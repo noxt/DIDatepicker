@@ -7,8 +7,12 @@
 //
 
 #import "DIViewController.h"
+#import "DIDatepicker.h"
+
 
 @interface DIViewController ()
+
+@property (weak, nonatomic) IBOutlet DIDatepicker *datepicker;
 
 @end
 
