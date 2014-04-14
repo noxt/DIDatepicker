@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		197269B118FC5AA50082AEA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B018FC5AA50082AEA9 /* Foundation.framework */; };
+		197269B318FC5AA50082AEA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B218FC5AA50082AEA9 /* CoreGraphics.framework */; };
+		197269B518FC5AA50082AEA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B418FC5AA50082AEA9 /* UIKit.framework */; };
+		197269BB18FC5AA50082AEA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 197269B918FC5AA50082AEA9 /* InfoPlist.strings */; };
+		197269BD18FC5AA50082AEA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269BC18FC5AA50082AEA9 /* main.m */; };
+		197269C118FC5AA50082AEA9 /* DIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269C018FC5AA50082AEA9 /* DIAppDelegate.m */; };
+		197269C418FC5AA50082AEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197269C218FC5AA50082AEA9 /* Main.storyboard */; };
+		197269C718FC5AA50082AEA9 /* DIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269C618FC5AA50082AEA9 /* DIViewController.m */; };
+		197269C918FC5AA50082AEA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197269C818FC5AA50082AEA9 /* Images.xcassets */; };
+		197269D018FC5AA50082AEA9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269CF18FC5AA50082AEA9 /* XCTest.framework */; };
+		197269D118FC5AA50082AEA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B018FC5AA50082AEA9 /* Foundation.framework */; };
+		197269D218FC5AA50082AEA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B418FC5AA50082AEA9 /* UIKit.framework */; };
+		197269DA18FC5AA50082AEA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 197269D818FC5AA50082AEA9 /* InfoPlist.strings */; };
+		197269DC18FC5AA50082AEA9 /* DIDatepickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197269DB18FC5AA50082AEA9 /* DIDatepickerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		197269D318FC5AA50082AEA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 197269A518FC5AA50082AEA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 197269AC18FC5AA50082AEA9;
+			remoteInfo = DIDatepicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		197269AD18FC5AA50082AEA9 /* DIDatepicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDatepicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		197269B018FC5AA50082AEA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		197269B218FC5AA50082AEA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		197269B418FC5AA50082AEA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		197269B818FC5AA50082AEA9 /* DIDatepicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DIDatepicker-Info.plist"; sourceTree = "<group>"; };
+		197269BA18FC5AA50082AEA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		197269BC18FC5AA50082AEA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		197269BE18FC5AA50082AEA9 /* DIDatepicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DIDatepicker-Prefix.pch"; sourceTree = "<group>"; };
+		197269BF18FC5AA50082AEA9 /* DIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIAppDelegate.h; sourceTree = "<group>"; };
+		197269C018FC5AA50082AEA9 /* DIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIAppDelegate.m; sourceTree = "<group>"; };
+		197269C318FC5AA50082AEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		197269C518FC5AA50082AEA9 /* DIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DIViewController.h; sourceTree = "<group>"; };
+		197269C618FC5AA50082AEA9 /* DIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIViewController.m; sourceTree = "<group>"; };
+		197269C818FC5AA50082AEA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		197269CE18FC5AA50082AEA9 /* DIDatepickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIDatepickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		197269CF18FC5AA50082AEA9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		197269D718FC5AA50082AEA9 /* DIDatepickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DIDatepickerTests-Info.plist"; sourceTree = "<group>"; };
+		197269D918FC5AA50082AEA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		197269DB18FC5AA50082AEA9 /* DIDatepickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DIDatepickerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		197269AA18FC5AA50082AEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269B318FC5AA50082AEA9 /* CoreGraphics.framework in Frameworks */,
+				197269B518FC5AA50082AEA9 /* UIKit.framework in Frameworks */,
+				197269B118FC5AA50082AEA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197269CB18FC5AA50082AEA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269D018FC5AA50082AEA9 /* XCTest.framework in Frameworks */,
+				197269D218FC5AA50082AEA9 /* UIKit.framework in Frameworks */,
+				197269D118FC5AA50082AEA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		197269A418FC5AA50082AEA9 = {
+			isa = PBXGroup;
+			children = (
+				197269B618FC5AA50082AEA9 /* DIDatepicker */,
+				197269D518FC5AA50082AEA9 /* DIDatepickerTests */,
+				197269AF18FC5AA50082AEA9 /* Frameworks */,
+				197269AE18FC5AA50082AEA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		197269AE18FC5AA50082AEA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				197269AD18FC5AA50082AEA9 /* DIDatepicker.app */,
+				197269CE18FC5AA50082AEA9 /* DIDatepickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		197269AF18FC5AA50082AEA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				197269B018FC5AA50082AEA9 /* Foundation.framework */,
+				197269B218FC5AA50082AEA9 /* CoreGraphics.framework */,
+				197269B418FC5AA50082AEA9 /* UIKit.framework */,
+				197269CF18FC5AA50082AEA9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		197269B618FC5AA50082AEA9 /* DIDatepicker */ = {
+			isa = PBXGroup;
+			children = (
+				197269BF18FC5AA50082AEA9 /* DIAppDelegate.h */,
+				197269C018FC5AA50082AEA9 /* DIAppDelegate.m */,
+				197269C218FC5AA50082AEA9 /* Main.storyboard */,
+				197269C518FC5AA50082AEA9 /* DIViewController.h */,
+				197269C618FC5AA50082AEA9 /* DIViewController.m */,
+				197269C818FC5AA50082AEA9 /* Images.xcassets */,
+				197269B718FC5AA50082AEA9 /* Supporting Files */,
+			);
+			path = DIDatepicker;
+			sourceTree = "<group>";
+		};
+		197269B718FC5AA50082AEA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197269B818FC5AA50082AEA9 /* DIDatepicker-Info.plist */,
+				197269B918FC5AA50082AEA9 /* InfoPlist.strings */,
+				197269BC18FC5AA50082AEA9 /* main.m */,
+				197269BE18FC5AA50082AEA9 /* DIDatepicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		197269D518FC5AA50082AEA9 /* DIDatepickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				197269DB18FC5AA50082AEA9 /* DIDatepickerTests.m */,
+				197269D618FC5AA50082AEA9 /* Supporting Files */,
+			);
+			path = DIDatepickerTests;
+			sourceTree = "<group>";
+		};
+		197269D618FC5AA50082AEA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				197269D718FC5AA50082AEA9 /* DIDatepickerTests-Info.plist */,
+				197269D818FC5AA50082AEA9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		197269AC18FC5AA50082AEA9 /* DIDatepicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 197269DF18FC5AA50082AEA9 /* Build configuration list for PBXNativeTarget "DIDatepicker" */;
+			buildPhases = (
+				197269A918FC5AA50082AEA9 /* Sources */,
+				197269AA18FC5AA50082AEA9 /* Frameworks */,
+				197269AB18FC5AA50082AEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DIDatepicker;
+			productName = DIDatepicker;
+			productReference = 197269AD18FC5AA50082AEA9 /* DIDatepicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		197269CD18FC5AA50082AEA9 /* DIDatepickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 197269E218FC5AA50082AEA9 /* Build configuration list for PBXNativeTarget "DIDatepickerTests" */;
+			buildPhases = (
+				197269CA18FC5AA50082AEA9 /* Sources */,
+				197269CB18FC5AA50082AEA9 /* Frameworks */,
+				197269CC18FC5AA50082AEA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				197269D418FC5AA50082AEA9 /* PBXTargetDependency */,
+			);
+			name = DIDatepickerTests;
+			productName = DIDatepickerTests;
+			productReference = 197269CE18FC5AA50082AEA9 /* DIDatepickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		197269A518FC5AA50082AEA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DI;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Dmitry Ivanenko";
+				TargetAttributes = {
+					197269CD18FC5AA50082AEA9 = {
+						TestTargetID = 197269AC18FC5AA50082AEA9;
+					};
+				};
+			};
+			buildConfigurationList = 197269A818FC5AA50082AEA9 /* Build configuration list for PBXProject "DIDatepicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 197269A418FC5AA50082AEA9;
+			productRefGroup = 197269AE18FC5AA50082AEA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				197269AC18FC5AA50082AEA9 /* DIDatepicker */,
+				197269CD18FC5AA50082AEA9 /* DIDatepickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		197269AB18FC5AA50082AEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269C918FC5AA50082AEA9 /* Images.xcassets in Resources */,
+				197269BB18FC5AA50082AEA9 /* InfoPlist.strings in Resources */,
+				197269C418FC5AA50082AEA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197269CC18FC5AA50082AEA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269DA18FC5AA50082AEA9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		197269A918FC5AA50082AEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269BD18FC5AA50082AEA9 /* main.m in Sources */,
+				197269C718FC5AA50082AEA9 /* DIViewController.m in Sources */,
+				197269C118FC5AA50082AEA9 /* DIAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		197269CA18FC5AA50082AEA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				197269DC18FC5AA50082AEA9 /* DIDatepickerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		197269D418FC5AA50082AEA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 197269AC18FC5AA50082AEA9 /* DIDatepicker */;
+			targetProxy = 197269D318FC5AA50082AEA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		197269B918FC5AA50082AEA9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197269BA18FC5AA50082AEA9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		197269C218FC5AA50082AEA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197269C318FC5AA50082AEA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		197269D818FC5AA50082AEA9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				197269D918FC5AA50082AEA9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		197269DD18FC5AA50082AEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		197269DE18FC5AA50082AEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		197269E018FC5AA50082AEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DIDatepicker/DIDatepicker-Prefix.pch";
+				INFOPLIST_FILE = "DIDatepicker/DIDatepicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		197269E118FC5AA50082AEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DIDatepicker/DIDatepicker-Prefix.pch";
+				INFOPLIST_FILE = "DIDatepicker/DIDatepicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		197269E318FC5AA50082AEA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DIDatepicker.app/DIDatepicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DIDatepicker/DIDatepicker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DIDatepickerTests/DIDatepickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		197269E418FC5AA50082AEA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DIDatepicker.app/DIDatepicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DIDatepicker/DIDatepicker-Prefix.pch";
+				INFOPLIST_FILE = "DIDatepickerTests/DIDatepickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		197269A818FC5AA50082AEA9 /* Build configuration list for PBXProject "DIDatepicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197269DD18FC5AA50082AEA9 /* Debug */,
+				197269DE18FC5AA50082AEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		197269DF18FC5AA50082AEA9 /* Build configuration list for PBXNativeTarget "DIDatepicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197269E018FC5AA50082AEA9 /* Debug */,
+				197269E118FC5AA50082AEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		197269E218FC5AA50082AEA9 /* Build configuration list for PBXNativeTarget "DIDatepickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				197269E318FC5AA50082AEA9 /* Debug */,
+				197269E418FC5AA50082AEA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 197269A518FC5AA50082AEA9 /* Project object */;
+}
