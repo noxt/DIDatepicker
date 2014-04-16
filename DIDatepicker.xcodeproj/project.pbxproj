@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190D670918FC8F150036E6D4 /* DIDatepickerDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190D670818FC8F150036E6D4 /* DIDatepickerDateView.m */; };
 		197269B118FC5AA50082AEA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B018FC5AA50082AEA9 /* Foundation.framework */; };
 		197269B318FC5AA50082AEA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B218FC5AA50082AEA9 /* CoreGraphics.framework */; };
 		197269B518FC5AA50082AEA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197269B418FC5AA50082AEA9 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190D670718FC8F150036E6D4 /* DIDatepickerDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIDatepickerDateView.h; sourceTree = "<group>"; };
+		190D670818FC8F150036E6D4 /* DIDatepickerDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIDatepickerDateView.m; sourceTree = "<group>"; };
 		197269AD18FC5AA50082AEA9 /* DIDatepicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIDatepicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197269B018FC5AA50082AEA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		197269B218FC5AA50082AEA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 			children = (
 				197269E618FC5B780082AEA9 /* DIDatepicker.h */,
 				197269E718FC5B780082AEA9 /* DIDatepicker.m */,
+				190D670718FC8F150036E6D4 /* DIDatepickerDateView.h */,
+				190D670818FC8F150036E6D4 /* DIDatepickerDateView.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				197269C718FC5AA50082AEA9 /* DIViewController.m in Sources */,
 				197269E818FC5B780082AEA9 /* DIDatepicker.m in Sources */,
 				197269C118FC5AA50082AEA9 /* DIAppDelegate.m in Sources */,
+				190D670918FC8F150036E6D4 /* DIDatepickerDateView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

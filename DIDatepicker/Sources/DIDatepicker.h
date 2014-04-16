@@ -6,6 +6,9 @@
 #import <UIKit/UIKit.h>
 
 
+extern const CGFloat kDIDetepickerHeight;
+
+
 @interface DIDatepicker : UIControl
 
 // data
@@ -14,6 +17,7 @@
 
 // UI
 @property (strong, nonatomic) UIColor *bottomLineColor;
+@property (strong, nonatomic) UIColor *selectedDateBottomLineColor;
 
 // methods
 - (void)selectDate:(NSDate *)date;
