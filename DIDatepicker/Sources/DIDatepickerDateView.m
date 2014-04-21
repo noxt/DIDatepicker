@@ -41,22 +41,39 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
-    [dateFormatter setLocale:locale];
+    [dateFormatter setDateFormat:@"dd"];
+    NSString *dayFormattedString = [dateFormatter stringFromDate:date];
 
-    [dateFormatter setDateFormat:@"dd EEE"];
-    NSString *dayString = [dateFormatter stringFromDate:date];
+    [dateFormatter setDateFormat:@"EEE"];
+    NSString *dayInWeekFormattedString = [dateFormatter stringFromDate:date];
 
     [dateFormatter setDateFormat:@"MMMM"];
-    NSString *monthString = [[dateFormatter stringFromDate:date] uppercaseString];
+    NSString *monthFormattedString = [[dateFormatter stringFromDate:date] uppercaseString];
 
-    NSMutableAttributedString *dateString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", dayString, monthString]];
-    [dateString addAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:20], NSForegroundColorAttributeName: [UIColor blackColor] } range:NSMakeRange(0, 2)];
-    [dateString addAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:13], NSForegroundColorAttributeName: [UIColor blackColor] } range:NSMakeRange(3, 2)];
-    [dateString addAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:8], NSForegroundColorAttributeName: [UIColor colorWithRed:153./255. green:153./255. blue:153./255. alpha:1.] } range:NSMakeRange(6, dateString.string.length - 6)];
+    NSMutableAttributedString *dateString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@\n%@", dayFormattedString, [dayInWeekFormattedString uppercaseString], monthFormattedString]];
+
+    [dateString addAttributes:@{
+                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:20],
+                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                }
+                        range:NSMakeRange(0, dayFormattedString.length)];
+
+    [dateString addAttributes:@{
+                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:8],
+                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                }
+                        range:NSMakeRange(dayFormattedString.length + 1, dayInWeekFormattedString.length)];
+
+    [dateString addAttributes:@{
+                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:8],
+                                NSForegroundColorAttributeName: [UIColor colorWithRed:153./255. green:153./255. blue:153./255. alpha:1.]
+                                }
+                        range:NSMakeRange(dateString.string.length - monthFormattedString.length, monthFormattedString.length)];
 
     if ([self isWeekday:date]) {
-        [dateString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Medium" size:13] range:NSMakeRange(3, 2)];
+        [dateString addAttribute:NSFontAttributeName
+                           value:[UIFont fontWithName:@"HelveticaNeue-Medium" size:8]
+                           range:NSMakeRange(dayFormattedString.length + 1, dayInWeekFormattedString.length)];
     }
 
     self.dateLabel.attributedText = dateString;

@@ -35,6 +35,7 @@
                               [NSDate dateWithTimeIntervalSinceNow:86400 * 8],
                               [NSDate dateWithTimeIntervalSinceNow:86400 * 9],
                               ];
+    [self.datepicker selectDateAtIndex:0];
 }
 
 @end
