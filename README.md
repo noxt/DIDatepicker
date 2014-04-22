@@ -18,7 +18,7 @@ Sample usage is available in the `DIViewController`.
 Add the following line to your Podfile:
 
 ```ruby
-pod 'DIDatepicker', :git => 'https://github.com/noxt/DIDatepicker'
+pod 'DIDatepicker'
 ```
 
 Then run the following in the same directory as your Podfile:
