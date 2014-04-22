@@ -33,7 +33,7 @@ Copy the folder `Sources/` to your project.
 
 ##License
 
-Copyright (c) 2014 noxt
+Copyright (c) 2014 Dmitry Ivanenko 
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
