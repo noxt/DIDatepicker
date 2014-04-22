@@ -13,6 +13,7 @@
 @interface DIViewController ()
 
 @property (weak, nonatomic) IBOutlet DIDatepicker *datepicker;
+@property (weak, nonatomic) IBOutlet UILabel *selectedDateLabel;
 
 @end
 
@@ -22,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self.datepicker addTarget:self action:@selector(updateSelectedDate) forControlEvents:UIControlEventValueChanged];
 
     self.datepicker.dates = @[
                               [NSDate dateWithTimeIntervalSinceNow:0],
@@ -36,6 +39,14 @@
                               [NSDate dateWithTimeIntervalSinceNow:86400 * 9],
                               ];
     [self.datepicker selectDateAtIndex:0];
+}
+
+- (void)updateSelectedDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:@"EEEEddMMMM" options:0 locale:nil];
+
+    self.selectedDateLabel.text = [formatter stringFromDate:self.datepicker.selectedDate];
 }
 
 @end

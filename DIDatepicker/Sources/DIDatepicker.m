@@ -86,8 +86,9 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 {
     _selectedDateBottomLineColor = selectedDateBottomLineColor;
 
-    for (id dateView in self.datesScrollView.subviews) {
-        if ([dateView isKindOfClass:[DIDatepickerDateView class]]) {
+    for (id subview in self.datesScrollView.subviews) {
+        if ([subview isKindOfClass:[DIDatepickerDateView class]]) {
+            DIDatepickerDateView *dateView = (DIDatepickerDateView *)subview;
             [dateView setItemSelectionColor:selectedDateBottomLineColor];
         }
     }
@@ -130,9 +131,9 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 {
     [self.datesScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-    CGFloat currentX = kDIDatepickerSpaceBetweenItems;
+    CGFloat currentItemXPosition = kDIDatepickerSpaceBetweenItems;
     for (NSDate *date in self.dates) {
-        DIDatepickerDateView *dateView = [[DIDatepickerDateView alloc] initWithFrame:CGRectMake(currentX, 0, kDIDatepickerItemWidth, self.frame.size.height)];
+        DIDatepickerDateView *dateView = [[DIDatepickerDateView alloc] initWithFrame:CGRectMake(currentItemXPosition, 0, kDIDatepickerItemWidth, self.frame.size.height)];
         dateView.date = date;
         dateView.selected = [date isEqualToDate:self.selectedDate];
         [dateView setItemSelectionColor:self.selectedDateBottomLineColor];
@@ -140,9 +141,10 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
         [self.datesScrollView addSubview:dateView];
 
-        currentX += kDIDatepickerItemWidth + kDIDatepickerSpaceBetweenItems;
+        currentItemXPosition += kDIDatepickerItemWidth + kDIDatepickerSpaceBetweenItems;
     }
-    self.datesScrollView.contentSize = CGSizeMake(currentX, self.frame.size.height);
+
+    self.datesScrollView.contentSize = CGSizeMake(currentItemXPosition, self.frame.size.height);
 }
 
 - (void)updateSelectedDate:(DIDatepickerDateView *)dateView

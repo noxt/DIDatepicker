@@ -112,7 +112,7 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
 
 - (void)setItemSelectionColor:(UIColor *)itemSelectionColor
 {
-    _selectionView.backgroundColor = itemSelectionColor;
+    self.selectionView.backgroundColor = itemSelectionColor;
 }
 
 - (void)setHighlighted:(BOOL)highlighted
