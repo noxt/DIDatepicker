@@ -132,11 +132,9 @@
 		197269B618FC5AA50082AEA9 /* DIDatepicker */ = {
 			isa = PBXGroup;
 			children = (
-				197269BF18FC5AA50082AEA9 /* DIAppDelegate.h */,
-				197269C018FC5AA50082AEA9 /* DIAppDelegate.m */,
-				197269C218FC5AA50082AEA9 /* Main.storyboard */,
 				197269C518FC5AA50082AEA9 /* DIViewController.h */,
 				197269C618FC5AA50082AEA9 /* DIViewController.m */,
+				197269C218FC5AA50082AEA9 /* Main.storyboard */,
 				197269C818FC5AA50082AEA9 /* Images.xcassets */,
 				197269B718FC5AA50082AEA9 /* Supporting Files */,
 			);
@@ -146,6 +144,8 @@
 		197269B718FC5AA50082AEA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				197269BF18FC5AA50082AEA9 /* DIAppDelegate.h */,
+				197269C018FC5AA50082AEA9 /* DIAppDelegate.m */,
 				197269B818FC5AA50082AEA9 /* DIDatepicker-Info.plist */,
 				197269B918FC5AA50082AEA9 /* InfoPlist.strings */,
 				197269BC18FC5AA50082AEA9 /* main.m */,

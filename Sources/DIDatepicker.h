@@ -6,6 +6,7 @@
 #import <UIKit/UIKit.h>
 
 
+extern const NSTimeInterval kSecondsInDay;
 extern const CGFloat kDIDetepickerHeight;
 
 
@@ -20,6 +21,10 @@ extern const CGFloat kDIDetepickerHeight;
 @property (strong, nonatomic) UIColor *selectedDateBottomLineColor;
 
 // methods
+- (void)fillDatesFromCurrentDate:(NSInteger)nextDatesCount;
+- (void)fillCurrentWeek;
+- (void)fillCurrentMonth;
+- (void)fillCurrentYear;
 - (void)selectDate:(NSDate *)date;
 - (void)selectDateAtIndex:(NSUInteger)index;
 
