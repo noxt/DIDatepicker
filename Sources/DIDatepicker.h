@@ -22,6 +22,7 @@ extern const CGFloat kDIDetepickerHeight;
 
 // methods
 - (void)fillDatesFromCurrentDate:(NSInteger)nextDatesCount;
+- (void)fillDatesFromDate:(NSDate *)fromDate numberOfDays:(NSInteger)nextDatesCount;
 - (void)fillCurrentWeek;
 - (void)fillCurrentMonth;
 - (void)fillCurrentYear;
