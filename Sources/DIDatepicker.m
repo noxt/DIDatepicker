@@ -111,6 +111,19 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
     self.dates = dates;
 }
 
+- (void)fillDatesFromDate:(NSDate *)fromDate numberOfDays:(NSInteger)nextDatesCount
+{
+    NSAssert(nextDatesCount < 1000, @"Too much dates");
+
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    for (NSInteger day = 0; day < nextDatesCount; day++)
+    {
+        [dates addObject:[fromDate dateByAddingTimeInterval:day * kSecondsInDay]];
+    }
+    
+    self.dates = dates;
+}
+
 - (void)fillCurrentWeek
 {
     NSDate *today = [NSDate date];
