@@ -9,8 +9,9 @@
 extern const CGFloat kDIDatepickerItemWidth;
 extern const CGFloat kDIDatepickerSelectionLineWidth;
 
+@protocol DIDatepickerViewProtocol
 
-@interface DIDatepickerDateView : UIControl
+@required
 
 // data
 @property (strong, nonatomic) NSDate *date;
@@ -18,5 +19,12 @@ extern const CGFloat kDIDatepickerSelectionLineWidth;
 
 // methods
 - (void)setItemSelectionColor:(UIColor *)itemSelectionColor;
+
+@end
+
+@interface DIDatepickerDateView : UIControl<DIDatepickerViewProtocol>
+
+@property (strong, nonatomic) NSDate *date;
+@property (assign, nonatomic) BOOL isSelected;
 
 @end

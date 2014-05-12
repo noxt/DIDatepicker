@@ -6,10 +6,9 @@
 #import "DIDatepicker.h"
 #import "DIDatepickerDateView.h"
 
-
-const NSTimeInterval kSecondsInDay = 86400;
+const NSTimeInterval kSecondsInDay = 24 * 60 * 60;
 const NSInteger kMondayOffset = 2;
-const CGFloat kDIDetepickerHeight = 60.;
+const CGFloat kDIDatepickerHeight = 60.;
 const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
 
@@ -24,6 +23,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
 - (void)awakeFromNib
 {
+    _viewClass = [DIDatepickerDateView class];
     [self setupViews];
 }
 
@@ -32,6 +32,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
     self = [super initWithFrame:frame];
     if (!self) return self;
 
+    _viewClass = [DIDatepickerDateView class];
     [self setupViews];
 
     return self;
@@ -62,8 +63,8 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
     _selectedDate = selectedDate;
 
     for (id subview in self.datesScrollView.subviews) {
-        if ([subview isKindOfClass:[DIDatepickerDateView class]]) {
-            DIDatepickerDateView *dateView = (DIDatepickerDateView *)subview;
+        if ([subview isKindOfClass:[_viewClass class]]) {
+            UIControl<DIDatepickerViewProtocol> *dateView = (UIControl<DIDatepickerViewProtocol> *)subview;
             dateView.isSelected = [dateView.date isEqualToDate:selectedDate];
         }
     }
@@ -89,8 +90,8 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
     _selectedDateBottomLineColor = selectedDateBottomLineColor;
 
     for (id subview in self.datesScrollView.subviews) {
-        if ([subview isKindOfClass:[DIDatepickerDateView class]]) {
-            DIDatepickerDateView *dateView = (DIDatepickerDateView *)subview;
+        if ([subview conformsToProtocol:@protocol(DIDatepickerViewProtocol)]) {
+            UIControl<DIDatepickerViewProtocol> *dateView = (UIControl<DIDatepickerViewProtocol> *)subview;
             [dateView setItemSelectionColor:selectedDateBottomLineColor];
         }
     }
@@ -226,7 +227,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
     CGFloat currentItemXPosition = kDIDatepickerSpaceBetweenItems;
     for (NSDate *date in self.dates) {
-        DIDatepickerDateView *dateView = [[DIDatepickerDateView alloc] initWithFrame:CGRectMake(currentItemXPosition, 0, kDIDatepickerItemWidth, self.frame.size.height)];
+        UIControl<DIDatepickerViewProtocol> *dateView = [[_viewClass alloc] initWithFrame:CGRectMake(currentItemXPosition, 0, kDIDatepickerItemWidth, self.frame.size.height)];
         dateView.date = date;
         dateView.selected = [date isEqualToDate:self.selectedDate];
         [dateView setItemSelectionColor:self.selectedDateBottomLineColor];
@@ -240,7 +241,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
     self.datesScrollView.contentSize = CGSizeMake(currentItemXPosition, self.frame.size.height);
 }
 
-- (void)updateSelectedDate:(DIDatepickerDateView *)dateView
+- (void)updateSelectedDate:(UIControl<DIDatepickerViewProtocol> *)dateView
 {
     self.selectedDate = dateView.date;
 }

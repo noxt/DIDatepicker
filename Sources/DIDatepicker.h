@@ -7,7 +7,7 @@
 
 
 extern const NSTimeInterval kSecondsInDay;
-extern const CGFloat kDIDetepickerHeight;
+extern const CGFloat kDIDatepickerHeight;
 
 
 @interface DIDatepicker : UIControl
@@ -18,7 +18,12 @@ extern const CGFloat kDIDetepickerHeight;
 
 // UI
 @property (strong, nonatomic) UIColor *bottomLineColor;
+@property (strong, nonatomic) UIColor *textColor;
+@property (strong, nonatomic) UIColor *lineColor;
 @property (strong, nonatomic) UIColor *selectedDateBottomLineColor;
+
+// configuration of view used. class must conform to 
+@property (assign) Class viewClass;
 
 // methods
 - (void)fillDatesFromCurrentDate:(NSInteger)nextDatesCount;
