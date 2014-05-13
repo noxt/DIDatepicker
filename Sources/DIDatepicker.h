@@ -6,10 +6,6 @@
 #import <UIKit/UIKit.h>
 
 
-extern const NSTimeInterval kSecondsInDay;
-extern const CGFloat kDIDatepickerHeight;
-
-
 @interface DIDatepicker : UIControl
 
 // data
@@ -21,6 +17,8 @@ extern const CGFloat kDIDatepickerHeight;
 @property (strong, nonatomic) UIColor *textColor;
 @property (strong, nonatomic) UIColor *lineColor;
 @property (strong, nonatomic) UIColor *selectedDateBottomLineColor;
+
+@property (assign) CGFloat spaceBetweenDateViews;
 
 // configuration of view used. class must conform to 
 @property (assign) Class viewClass;

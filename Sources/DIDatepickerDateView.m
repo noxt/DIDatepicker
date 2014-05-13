@@ -6,10 +6,6 @@
 #import "DIDatepickerDateView.h"
 
 
-const CGFloat kDIDatepickerItemWidth = 46.;
-const CGFloat kDIDatepickerSelectionLineWidth = 51.;
-
-
 @interface DIDatepickerDateView ()
 
 @property (strong, nonatomic) UILabel *dateLabel;
@@ -19,6 +15,11 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
 
 
 @implementation DIDatepickerDateView
+
++ (CGFloat)itemWidth
+{
+    return 46.0;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {

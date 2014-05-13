@@ -8,8 +8,6 @@
 
 const NSTimeInterval kSecondsInDay = 24 * 60 * 60;
 const NSInteger kMondayOffset = 2;
-const CGFloat kDIDatepickerHeight = 60.;
-const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
 
 @interface DIDatepicker ()
@@ -40,6 +38,8 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
 - (void)setupViews
 {
+    self.spaceBetweenDateViews = 15.0;
+
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.backgroundColor = [UIColor whiteColor];
     self.bottomLineColor = [UIColor colorWithWhite:0.816 alpha:1.000];
@@ -133,7 +133,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
     NSMutableArray *dates = [[NSMutableArray alloc] init];
     for (NSInteger weekday = 0; weekday < 7; weekday++) {
-        [dates addObject:[NSDate dateWithTimeInterval:(kMondayOffset + weekday - todayComponents.weekday)*kSecondsInDay sinceDate:today]];
+        [dates addObject:[NSDate dateWithTimeInterval:(kMondayOffset + weekday - todayComponents.weekday) * kSecondsInDay sinceDate:today]];
     }
 
     self.dates = dates;
@@ -225,9 +225,12 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 {
     [self.datesScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 
-    CGFloat currentItemXPosition = kDIDatepickerSpaceBetweenItems;
+    CGFloat currentItemXPosition = self.spaceBetweenDateViews;
     for (NSDate *date in self.dates) {
-        UIControl<DIDatepickerViewProtocol> *dateView = [[_viewClass alloc] initWithFrame:CGRectMake(currentItemXPosition, 0, kDIDatepickerItemWidth, self.frame.size.height)];
+        UIControl<DIDatepickerViewProtocol> *dateView = [[_viewClass alloc] initWithFrame:CGRectMake(currentItemXPosition,
+                                                                                                     0,
+                                                                                                     [_viewClass itemWidth],
+                                                                                                     self.frame.size.height)];
         dateView.date = date;
         dateView.selected = [date isEqualToDate:self.selectedDate];
         [dateView setItemSelectionColor:self.selectedDateBottomLineColor];
@@ -235,7 +238,7 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
         [self.datesScrollView addSubview:dateView];
 
-        currentItemXPosition += kDIDatepickerItemWidth + kDIDatepickerSpaceBetweenItems;
+        currentItemXPosition += [_viewClass itemWidth] + self.spaceBetweenDateViews;
     }
 
     self.datesScrollView.contentSize = CGSizeMake(currentItemXPosition, self.frame.size.height);
@@ -250,8 +253,8 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 {
     NSUInteger itemIndex = [self.dates indexOfObject:self.selectedDate];
 
-    CGSize itemSize = CGSizeMake(kDIDatepickerItemWidth + kDIDatepickerSpaceBetweenItems, self.frame.size.height);
-    CGFloat itemOffset = itemSize.width * itemIndex - (self.frame.size.width - (kDIDatepickerItemWidth + 2 * kDIDatepickerSpaceBetweenItems)) / 2;
+    CGSize itemSize = CGSizeMake([_viewClass itemWidth] + self.spaceBetweenDateViews, self.frame.size.height);
+    CGFloat itemOffset = itemSize.width * itemIndex - (self.frame.size.width - ([_viewClass itemWidth] + 2 * self.spaceBetweenDateViews)) / 2;
 
     itemOffset = MAX(0, MIN(self.datesScrollView.contentSize.width - (self.frame.size.width ), itemOffset));
 

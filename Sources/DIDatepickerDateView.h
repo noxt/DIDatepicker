@@ -5,10 +5,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-extern const CGFloat kDIDatepickerItemWidth;
-extern const CGFloat kDIDatepickerSelectionLineWidth;
-
 @protocol DIDatepickerViewProtocol
 
 @required
@@ -17,7 +13,10 @@ extern const CGFloat kDIDatepickerSelectionLineWidth;
 @property (strong, nonatomic) NSDate *date;
 @property (assign, nonatomic) BOOL isSelected;
 
-// methods
+// class methods communicating the size requirements of the view implementation
++ (CGFloat)itemWidth;
+
+// methods for supporting simple restyling (e.g. font & color)
 - (void)setItemSelectionColor:(UIColor *)itemSelectionColor;
 
 @end
