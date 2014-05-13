@@ -40,10 +40,26 @@ const NSInteger kMondayOffset = 2;
 {
     self.spaceBetweenDateViews = 15.0;
 
+    _viewConfiguration = @{
+       DIDatePickerViewSelectionColor:[UIColor colorWithRed:242./255. green:93./255. blue:28./255. alpha:1.],
+       DIDatePickerViewLineColor:[UIColor colorWithWhite:0.816 alpha:1.000],
+
+       DIDatePickerViewDayTextFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:20],
+       DIDatePickerViewWeekendDayTextFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:8],
+       DIDatePickerViewWeekdayTextFont:[UIFont fontWithName:@"HelveticaNeue-Thin" size:8],
+       DIDatePickerViewMonthTextFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:8],
+
+       DIDatePickerViewMonthTextColor:[UIColor colorWithRed:153./255. green:153./255. blue:153./255. alpha:1.],
+       DIDatePickerViewWeekdayTextColor:[UIColor blackColor],
+       DIDatePickerViewDayTextColor:[UIColor blackColor],
+    };
+
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.backgroundColor = [UIColor whiteColor];
-    self.bottomLineColor = [UIColor colorWithWhite:0.816 alpha:1.000];
-    self.selectedDateBottomLineColor = [UIColor colorWithRed:0.910 green:0.278 blue:0.128 alpha:1.000];
+    self.bottomLineColor = nil;
+
+    //now default is to use dictionary above,
+    self.selectedDateBottomLineColor = nil;
 }
 
 
@@ -56,6 +72,15 @@ const NSInteger kMondayOffset = 2;
     [self updateDatesView];
 
     self.selectedDate = nil;
+}
+
+// custom accessor merges a partial dictionary with the one already available (e.g. the default one set in setupView)
+// this way users can keep defaults where needed
+- (void)addViewConfiguration:(NSDictionary *)newConfiguration
+{
+    NSMutableDictionary *tmp = [_viewConfiguration mutableCopy];
+    [tmp addEntriesFromDictionary:newConfiguration];
+    _viewConfiguration = [tmp copy];
 }
 
 - (void)setSelectedDate:(NSDate *)selectedDate
@@ -214,7 +239,14 @@ const NSInteger kMondayOffset = 2;
 
     // draw bottom line
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(context, self.bottomLineColor.CGColor);
+    if (self.bottomLineColor) {
+        CGContextSetStrokeColorWithColor(context, self.bottomLineColor.CGColor);
+    }
+    else {
+        UIColor *lineColor = [_viewConfiguration objectForKey:DIDatePickerViewLineColor];
+        CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
+    }
+
     CGContextSetLineWidth(context, .5);
     CGContextMoveToPoint(context, 0, rect.size.height - .5);
     CGContextAddLineToPoint(context, rect.size.width, rect.size.height - .5);
@@ -231,9 +263,12 @@ const NSInteger kMondayOffset = 2;
                                                                                                      0,
                                                                                                      [_viewClass itemWidth],
                                                                                                      self.frame.size.height)];
+        dateView.viewConfiguration = _viewConfiguration;
         dateView.date = date;
         dateView.selected = [date isEqualToDate:self.selectedDate];
-        [dateView setItemSelectionColor:self.selectedDateBottomLineColor];
+        if (self.selectedDateBottomLineColor) {
+            [dateView setItemSelectionColor:self.selectedDateBottomLineColor];
+        }
         [dateView addTarget:self action:@selector(updateSelectedDate:) forControlEvents:UIControlEventValueChanged];
 
         [self.datesScrollView addSubview:dateView];
