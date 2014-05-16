@@ -51,5 +51,6 @@
 - (void)fillCurrentYear;
 - (void)selectDate:(NSDate *)date;
 - (void)selectDateAtIndex:(NSUInteger)index;
+- (void)addViewConfiguration:(NSDictionary *)dictionary;
 
 @end
