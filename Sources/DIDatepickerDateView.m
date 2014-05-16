@@ -4,11 +4,7 @@
 //
 
 #import "DIDatepickerDateView.h"
-
-
-const CGFloat kDIDatepickerItemWidth = 46.;
-const CGFloat kDIDatepickerSelectionLineWidth = 51.;
-
+#import "DIDatepicker.h"
 
 @interface DIDatepickerDateView ()
 
@@ -19,6 +15,11 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
 
 
 @implementation DIDatepickerDateView
+
++ (CGFloat)itemWidth
+{
+    return 46.0;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -53,26 +54,26 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
     NSMutableAttributedString *dateString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@\n%@", dayFormattedString, [dayInWeekFormattedString uppercaseString], monthFormattedString]];
 
     [dateString addAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:20],
-                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                NSFontAttributeName: [_viewConfiguration objectForKey:DIDatePickerViewDayTextFont],
+                                NSForegroundColorAttributeName: [_viewConfiguration objectForKey:DIDatePickerViewDayTextColor]
                                 }
                         range:NSMakeRange(0, dayFormattedString.length)];
 
     [dateString addAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin" size:8],
-                                NSForegroundColorAttributeName: [UIColor blackColor]
+                                NSFontAttributeName: [_viewConfiguration objectForKey:DIDatePickerViewWeekdayTextFont],
+                                NSForegroundColorAttributeName:[_viewConfiguration objectForKey:DIDatePickerViewWeekdayTextColor],
                                 }
                         range:NSMakeRange(dayFormattedString.length + 1, dayInWeekFormattedString.length)];
 
     [dateString addAttributes:@{
-                                NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:8],
-                                NSForegroundColorAttributeName: [UIColor colorWithRed:153./255. green:153./255. blue:153./255. alpha:1.]
+                                NSFontAttributeName: [_viewConfiguration objectForKey:DIDatePickerViewMonthTextFont],
+                                NSForegroundColorAttributeName:[_viewConfiguration objectForKey:DIDatePickerViewMonthTextColor]
                                 }
                         range:NSMakeRange(dateString.string.length - monthFormattedString.length, monthFormattedString.length)];
 
     if ([self isWeekday:date]) {
         [dateString addAttribute:NSFontAttributeName
-                           value:[UIFont fontWithName:@"HelveticaNeue-Medium" size:8]
+                           value:[_viewConfiguration objectForKey:DIDatePickerViewWeekendDayTextFont]
                            range:NSMakeRange(dayFormattedString.length + 1, dayInWeekFormattedString.length)];
     }
 
@@ -103,7 +104,7 @@ const CGFloat kDIDatepickerSelectionLineWidth = 51.;
     if (!_selectionView) {
         _selectionView = [[UIView alloc] initWithFrame:CGRectMake((self.frame.size.width - 51) / 2, self.frame.size.height - 3, 51, 3)];
         _selectionView.alpha = 0;
-        _selectionView.backgroundColor = [UIColor colorWithRed:242./255. green:93./255. blue:28./255. alpha:1.];
+        _selectionView.backgroundColor = [self.viewConfiguration objectForKey:DIDatePickerViewSelectionColor];
         [self addSubview:_selectionView];
     }
 
