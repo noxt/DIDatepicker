@@ -1,6 +1,8 @@
 DIDatepicker
 ============
 
+**!!! This version is no longer supported. A new version in [my new repo](https://github.com/noxt/ScrollableDatepicker)**
+
 Yet another datepicker for iOS.
 
 ![demo](screenshots/screenshot.png)
