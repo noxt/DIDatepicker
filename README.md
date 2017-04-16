@@ -33,7 +33,7 @@ pod install
 Copy the folder `Sources/` to your project.
 
 
-##License
+## License
 
 Copyright (c) 2014 Dmitry Ivanenko 
 
